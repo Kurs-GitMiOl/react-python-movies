@@ -41,6 +41,30 @@ async function handleAddMovie(movie) {
     setAddingMovie(false);
   }
 }
+////////usuwanie
+// async function handleDeleteMovie(movie) {
+//     const response = await fetch(`/movies/${movie.id}`, {
+//         method: 'DELETE',
+//     });
+//     if (response.ok) {
+//         const nextMovies = movies.filter(m => m !== movie);
+//         setMovies(nextMovies);
+//     }
+// }
+///////
+
+    ////////usuwanie
+async function handleDeleteMovie(movie) {
+    const url = `/movies/${movie.id}`;
+    const response = await fetch(url, {method:'DELATE'});
+        if (response.ok) {
+        const nextMovies = movies.filter(m => m !== movie);
+        setMovies(nextMovies);
+    }
+
+}
+///////
+
 
 
     return (
