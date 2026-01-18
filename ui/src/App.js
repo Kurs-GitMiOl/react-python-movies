@@ -12,7 +12,7 @@ function App() {
     //     setMovies([...movies, movie]);
     //     setAddingMovie(false);
     // }
-
+////////komo
     // zamieniona funkcja nizej
 
     // to robi listę filmów na stronie
