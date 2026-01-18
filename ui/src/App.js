@@ -1,5 +1,5 @@
 import './App.css';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import "milligram";
 import MovieForm from "./MovieForm";
 import MoviesList from "./MoviesList";
@@ -14,6 +14,21 @@ function App() {
     // }
 
     // zamieniona funkcja nizej
+
+    // to robi listę filmów na stronie
+    useEffect(() => {
+    const fetchMovies = async () => {
+        const response = await fetch(`/movies`);
+        if (response.ok) {
+            const movies = await response.json();
+            setMovies(movies);
+        }
+    };
+    fetchMovies();
+}, []);
+
+
+
 async function handleAddMovie(movie) {
     movie.actors = ''; //dodana linijka
   const response = await fetch('/movies', {
